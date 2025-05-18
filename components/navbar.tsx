@@ -177,7 +177,7 @@ export default function NavbarComponent(props: NavbarProps) {
       <NavbarMenu>
         <div className="flex flex-col gap-4">
           {sections.map((section) => (
-            <NavbarMenuItem key={section} className="p-0">
+            <NavbarMenuItem key={section} className="p-2">
               <Link
                 className={cn(
                   "w-full py-2 text-foreground no-underline hover:text-foreground/80 transition-colors",

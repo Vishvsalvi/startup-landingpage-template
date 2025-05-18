@@ -9,6 +9,7 @@ import { Accordion, AccordionItem, Switch } from "@heroui/react";
 import { Pricing } from "@/components/Pricing";
 import { PRICING_TIERS } from "@/constants/pricing";
 import CallToAction from "@/components/callToAction";
+import ReactLenis from "lenis/react"
 
 // Define testimonial interface
 interface Testimonial {
@@ -157,7 +158,7 @@ export default function Home() {
   ]
   
   return (
-    <>
+    <ReactLenis root>
       <main className="container mx-auto flex flex-1 flex-col items-center justify-center overflow-hidden w-full">
         {/* HERO SECTION */}
         <section id="home" className="flex flex-col items-center justify-center text-center w-full py-24">
@@ -747,6 +748,6 @@ export default function Home() {
         <CallToAction />
       </section>
       </main>
-    </>
+    </ReactLenis>
   );
 }
