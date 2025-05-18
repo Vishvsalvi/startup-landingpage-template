@@ -17,7 +17,7 @@ import {Icon} from "@iconify/react";
 import {cn} from "@heroui/react";
 import { useTheme } from "next-themes";
 
-const sections = ["home", "features", "customers", "about", "integrations"];
+const sections = ["home", "features", "pricing", "customers", "integrations"];
 
 export default function NavbarComponent(props: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

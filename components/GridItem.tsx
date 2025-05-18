@@ -16,7 +16,7 @@ const containerAnimation = {
 export function GridItem({ title, description, background, size, delay = 0.3 }: GridItemProps) {
   return (
     <motion.div
-      className={`col-span-12 ${size === "small" ? "md:col-span-4" : "md:col-span-8"} relative group rounded-3xl bg-white dark:bg-[#09090b] overflow-hidden min-h-[400px] cursor-pointer shadow-sm`}
+      className={`col-span-12 ${size === "small" ? "md:col-span-4" : "md:col-span-8"} relative group rounded-3xl bg-white dark:bg-[#09090b] overflow-hidden min-h-[400px] cursor-pointer shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]`}
       variants={containerAnimation}
       initial="hidden"
       animate="show"

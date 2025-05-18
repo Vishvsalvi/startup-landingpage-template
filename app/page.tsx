@@ -160,7 +160,7 @@ export default function Home() {
     <>
       <main className="container mx-auto flex flex-1 flex-col items-center justify-center overflow-hidden w-full">
         {/* HERO SECTION */}
-        <section className="flex flex-col items-center justify-center text-center w-full py-24">
+        <section id="home" className="flex flex-col items-center justify-center text-center w-full py-24">
           <motion.div
             className="space-y-6 px-8"
             variants={containerAnimation}
@@ -255,12 +255,13 @@ export default function Home() {
 </section>
 
         {/* Features Section */}
-        <section className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+        <section id="features" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
           <h2 className="tracking-tighter text-5xl font-semibold mb-4 text-center">Made for modern product teams</h2>
           <p className="text-muted-foreground mb-8 text-center">Our world class engineering team is here to help you build the best products and change the world.</p>
           <div className="grid grid-cols-12 gap-6 max-w-[1400px] mx-auto">
             {GRID_ITEMS.map((item, index) => (
               <GridItem
+
                 key={item.id}
                 title={item.title}
                 description={item.description}
@@ -273,10 +274,12 @@ export default function Home() {
         </section>
 
         {/* Pricing Section */}
+        <section id="pricing" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
         <Pricing data={PRICING_TIERS} />
+        </section>
 
         {/* Testimonials Section */}
-        <section className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+        <section id="customers" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
           <motion.div
             className="text-center"
             variants={containerAnimation}
@@ -297,7 +300,7 @@ export default function Home() {
             <div className="grid gap-4 content-start">
               <motion.div 
                 key={TESTIMONIALS[0].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -330,7 +333,7 @@ export default function Home() {
 
               <motion.div 
                 key={TESTIMONIALS[4].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -372,7 +375,7 @@ export default function Home() {
             <div className="grid gap-4 content-start">
               <motion.div 
                 key={TESTIMONIALS[1].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                  className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -419,7 +422,7 @@ export default function Home() {
 
               <motion.div 
                 key={TESTIMONIALS[5].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -452,7 +455,7 @@ export default function Home() {
 
               <motion.div 
                 key={TESTIMONIALS[9].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -483,7 +486,7 @@ export default function Home() {
             <div className="grid gap-4 content-start">
               <motion.div 
                 key={TESTIMONIALS[2].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -541,7 +544,7 @@ export default function Home() {
 
               <motion.div 
                 key={TESTIMONIALS[6].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -588,7 +591,7 @@ export default function Home() {
             <div className="grid gap-4 content-start">
               <motion.div 
                 key={TESTIMONIALS[3].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -621,7 +624,7 @@ export default function Home() {
 
               <motion.div 
                 key={TESTIMONIALS[8].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -649,7 +652,7 @@ export default function Home() {
 
               <motion.div 
                 key={TESTIMONIALS[10].id} 
-                className="border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
+                className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] border border-gray-200 dark:border-gray-800 rounded-xl p-6 flex flex-col bg-white/5 backdrop-blur-sm h-fit"
                 variants={containerAnimation}
                 initial="hidden"
                 whileInView="show"
@@ -687,7 +690,7 @@ export default function Home() {
         </section>
 
       {/* FAQ SECTION */}
-      <section className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+      <section id="faq" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
         <h2 className="tracking-tighter text-5xl font-semibold text-center mb-4">Let's answer your questions</h2>
         <p className="text-muted-foreground mb-8 text-center">Need help with something? Here are some of the most common questions we get.</p>
         <Accordion
@@ -738,7 +741,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full mt-[6rem] px-4 md:px-8 lg:px-12 py-24">
+      <section id="integrations" className="w-full mt-[6rem] px-4 md:px-8 lg:px-12 py-24">
         <h2 className="tracking-tighter text-5xl font-semibold text-center mb-4">Ready to scale your business?</h2>
         <p className="text-muted-foreground mb-8 text-center">Book a call with our team to get started.</p>
         <CallToAction />

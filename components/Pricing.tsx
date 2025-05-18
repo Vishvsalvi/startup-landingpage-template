@@ -82,7 +82,7 @@ export function Pricing({ data }: PricingProps) {
           <motion.div
             key={tier.name}
             {...getCardAnimation(index)}
-            className=" flex flex-col p-6 dark:border-none border border-zinc-200 dark:bg-zinc-900 rounded-xl relative"
+            className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex flex-col p-6 dark:border-none border border-zinc-200 dark:bg-zinc-900 rounded-xl relative"
           >
             {tier.isPopular && (
               <div className="absolute -top-3 right-4">
