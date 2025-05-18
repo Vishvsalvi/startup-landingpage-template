@@ -1,9 +1,10 @@
 import { Button } from "@heroui/button";
-import { Chip, Switch} from "@heroui/react";
+import { Chip } from "@heroui/react";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { PricingToggle } from "./PricingToggle";
 
 interface PricingFeature {
   name: string;
@@ -24,7 +25,7 @@ interface PricingProps {
 const YEARLY_DISCOUNT = 0.8; // 20% discount for yearly plans
 
 export function Pricing({ data }: PricingProps) {
-  const [isYearly, setIsYearly] = useState(false);
+  const [billingPeriod, setBillingPeriod] = useState<'yearly' | 'quarterly'>('yearly');
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -32,8 +33,10 @@ export function Pricing({ data }: PricingProps) {
   });
 
   const getPrice = (basePrice: number) => {
-    const price = isYearly ? basePrice * 12 * YEARLY_DISCOUNT : basePrice;
-    return price.toFixed(0);
+    if (billingPeriod === 'yearly') {
+      return (basePrice * 12 * YEARLY_DISCOUNT).toFixed(0);
+    }
+    return (basePrice * 3).toFixed(0); // Quarterly price
   };
 
   const getCardAnimation = (index: number) => {
@@ -66,15 +69,8 @@ export function Pricing({ data }: PricingProps) {
       <h2 className="tracking-tighter text-5xl font-semibold text-center mb-4">Pricing</h2>
       <p className="text-muted-foreground mb-8 text-center">We offer a range of pricing options to suit your needs.</p>
       
-      {/* Monthly/Yearly Toggle */}
-      <div className="flex justify-center items-center gap-4 mb-12">
-        <span className={`text-sm ${!isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>Monthly</span>
-        <Switch 
-          defaultSelected={isYearly}
-          onValueChange={setIsYearly}
-          className="data-[selected=true]"
-        />
-        <span className={`text-sm ${isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>Yearly</span>
+      <div className="flex justify-center mb-12">
+        <PricingToggle onPlanChange={setBillingPeriod} />
       </div>
 
       <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
@@ -82,7 +78,7 @@ export function Pricing({ data }: PricingProps) {
           <motion.div
             key={tier.name}
             {...getCardAnimation(index)}
-            className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex flex-col p-6 dark:border-none border border-zinc-200 dark:bg-zinc-900 rounded-xl relative"
+            className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex flex-col p-6 dark:border-none border border-zinc-200 dark:bg-neutral-900 opacity-30 rounded-xl relative"
           >
             {tier.isPopular && (
               <div className="absolute -top-3 right-4">
@@ -92,10 +88,10 @@ export function Pricing({ data }: PricingProps) {
             <h3 className="text-xl font-semibold mb-2">{tier.name}</h3>
             <div className="mb-4">
               <span className="text-4xl font-bold">${getPrice(tier.price)}</span>
-              <span className="text-muted-foreground">/ {isYearly ? 'year' : 'month'}</span>
+              <span className="text-muted-foreground">/ {billingPeriod === 'yearly' ? 'year' : 'quarter'}</span>
             </div>
             <p className="text-sm text-muted-foreground mb-6">
-              billed {isYearly ? 'yearly' : 'monthly'}
+              billed {billingPeriod === 'yearly' ? 'yearly' : 'quarterly'}
             </p>
             <ul className="space-y-4 mb-8 flex-grow">
               {tier.features.map((feature) => (
@@ -111,7 +107,7 @@ export function Pricing({ data }: PricingProps) {
                 </li>
               ))}
             </ul>
-            <Button 
+            <Button   
               className={
                 tier.isPopular 
                   ? "w-full bg-foreground text-background hover:opacity-90"

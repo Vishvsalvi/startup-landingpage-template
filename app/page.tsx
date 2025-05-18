@@ -237,7 +237,7 @@ export default function Home() {
         </section>
 
         {/* Company Logo Section */}
-    <section className="w-full mt-[8rem]">
+    <section className="w-full mt-[4rem]">
     <h2 className="tracking-tighter text-5xl font-semibold mb-4 text-center">Trusted by top engineering teams</h2>
     <p className="text-muted-foreground mb-8 text-center">Engineers from top companies use our platform to build the best products.</p>
     <div className=" flex flex-wrap justify-center items-center gap-x-10 gap-y-2 px-6 mx-auto">
@@ -256,7 +256,7 @@ export default function Home() {
 </section>
 
         {/* Features Section */}
-        <section id="features" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+        <section id="features" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
           <h2 className="tracking-tighter text-5xl font-semibold mb-4 text-center">Made for modern product teams</h2>
           <p className="text-muted-foreground mb-8 text-center">Our world class engineering team is here to help you build the best products and change the world.</p>
           <div className="grid grid-cols-12 gap-6 max-w-[1400px] mx-auto">
@@ -275,12 +275,12 @@ export default function Home() {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+        <section id="pricing" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
         <Pricing data={PRICING_TIERS} />
         </section>
 
         {/* Testimonials Section */}
-        <section id="customers" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+          <section id="customers" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
           <motion.div
             className="text-center"
             variants={containerAnimation}
@@ -691,7 +691,7 @@ export default function Home() {
         </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className="w-full mt-[8rem] px-4 md:px-8 lg:px-12 py-24">
+      <section id="faq" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
         <h2 className="tracking-tighter text-5xl font-semibold text-center mb-4">Let's answer your questions</h2>
         <p className="text-muted-foreground mb-8 text-center">Need help with something? Here are some of the most common questions we get.</p>
         <Accordion
@@ -742,7 +742,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="integrations" className="w-full mt-[6rem] px-4 md:px-8 lg:px-12 py-24">
+      <section id="integrations" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
         <h2 className="tracking-tighter text-5xl font-semibold text-center mb-4">Ready to scale your business?</h2>
         <p className="text-muted-foreground mb-8 text-center">Book a call with our team to get started.</p>
         <CallToAction />

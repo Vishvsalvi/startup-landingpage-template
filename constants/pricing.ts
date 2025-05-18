@@ -27,7 +27,7 @@ export const PRICING_TIERS = [
   {
     name: "ENTERPRISE",
     price: 99,
-    description: "For large-scale operations and high-volume users",
+    description: "For large-scale operations and high-volume",
     features: [
       { name: "Unlimited Users" },
       { name: "500GB Storage" },
