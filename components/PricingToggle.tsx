@@ -25,9 +25,7 @@ export function PricingToggle({ onPlanChange }: PricingToggleProps) {
         }`}
       >
         Pay Yearly
-      <span className="hidden md:block px-2 py-1 bg-zinc-600 rounded-full text-xs ml-2 text-white">
-        Save 25%
-      </span>
+     
       </button>
       
       
