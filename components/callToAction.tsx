@@ -20,7 +20,7 @@ const CallToAction = () => {
               We are a team of experienced engineers who are passionate about building products that help people like you to change the world.
             </p>
             <Button 
-              className="bg-background text-foreground dark:bg-zinc-900 dark:text-foreground hover:bg-zinc-100 px-6 py-3 rounded-full font-medium text-sm self-start"
+              className="bg-background text-foreground dark:bg-foreground dark:text-background hover:bg-zinc-100 px-6 py-3 rounded-full font-medium text-sm self-start"
               endContent={<Icon icon="solar:alt-arrow-right-linear" />}
             >
               Book a demo

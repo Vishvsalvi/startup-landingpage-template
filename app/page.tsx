@@ -4,12 +4,13 @@ import { Button } from "@heroui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GridItem } from "../components/GridItem";
-import { GRID_ITEMS, BRAND_IMAGES } from "@/constants/constant";
-import { Accordion, AccordionItem, Switch } from "@heroui/react";
+import { GRID_ITEMS, BRAND_IMAGES, TUTORIAL_ITEMS } from "@/constants/constant";
+import { Accordion, AccordionItem } from "@heroui/react";
 import { Pricing } from "@/components/Pricing";
 import { PRICING_TIERS } from "@/constants/pricing";
 import CallToAction from "@/components/callToAction";
 import ReactLenis from "lenis/react"
+import { TutorialCard } from "@/components/TutorialCard";
 
 // Define testimonial interface
 interface Testimonial {
@@ -48,7 +49,7 @@ export default function Home() {
       image: "",
       verified: true,
       text: "I just transitioned from traditional cloud stacks to this edge-first system.",
-      additionalText: "I'm liking it so far. I wasn’t unhappy with legacy infra—it’s fine. But this platform being open infra and forward-compatible made it worth trying. Looks solid."
+      additionalText: "I'm liking it so far. I wasn't unhappy with legacy infra—it's fine. But this platform being open infra and forward-compatible made it worth trying. Looks solid."
     },
     {
       id: 3,
@@ -72,7 +73,7 @@ export default function Home() {
       name: "Reid Hoffman",
       username: "@reidhoffman",
       image: "",
-      text: "I've used this edge platform for a year and I'm amazed at how fast it’s evolving. This is easily the most robust and forward-thinking infrastructure solution on the market. From edge-native APIs to a clean, developer-first UX, it’ll wow your engineers and customers alike."
+      text: "I've used this edge platform for a year and I'm amazed at how fast it's evolving. This is easily the most robust and forward-thinking infrastructure solution on the market. From edge-native APIs to a clean, developer-first UX, it'll wow your engineers and customers alike."
     },
     {
       id: 6,
@@ -88,7 +89,7 @@ export default function Home() {
       username: "@naval",
       image: "",
       text: "Why are people still tied to outdated infra? Just today I saw a startup pitch using centralized compute when they know this edge-native platform exists.",
-      footer: "It’s a no-brainer—great philosophy, smart team, and the tech actually works."
+      footer: "It's a no-brainer—great philosophy, smart team, and the tech actually works."
     },
     {
       id: 8,
@@ -102,14 +103,14 @@ export default function Home() {
       name: "Brian Armstrong",
       username: "@brian_armstrong",
       image: "",
-      text: "Decentralized, high-availability edge infrastructure is the future—and this platform gets it right. It’s become a critical part of our backend architecture."
+      text: "Decentralized, high-availability edge infrastructure is the future—and this platform gets it right. It's become a critical part of our backend architecture."
     },
     {
       id: 10,
       name: "Diane Greene",
       username: "@dianegreene",
       image: "",
-      text: "Having worked in cloud infrastructure for decades, it’s refreshing to see something this innovative. Fast deployment, localized latency, and developer freedom—finally in one place."
+      text: "Having worked in cloud infrastructure for decades, it's refreshing to see something this innovative. Fast deployment, localized latency, and developer freedom—finally in one place."
     },
     {
       id: 11,
@@ -255,6 +256,23 @@ export default function Home() {
     </div>
 </section>
 
+      {/* Tutorial section */}
+      <section id="tutorial" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
+        <h2 className="tracking-tighter text-5xl font-semibold mb-4 text-center">Scale with ease</h2>
+        <p className="text-muted-foreground mb-8 text-center">Our designed platform is easy to use and scale with ease.</p>
+            <div className="grid grid-cols-12 gap-6 max-w-[1400px] mx-auto">
+            {TUTORIAL_ITEMS.map((item) => (
+              <TutorialCard
+                step={item.id}
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                background={item.background}
+              />
+            ))}
+            </div>
+      </section>
+
         {/* Features Section */}
         <section id="features" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">
           <h2 className="tracking-tighter text-5xl font-semibold mb-4 text-center">Made for modern product teams</h2>
@@ -273,6 +291,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+
 
         {/* Pricing Section */}
         <section id="pricing" className="w-full mt-[4rem] px-4 md:px-8 lg:px-12 py-24">

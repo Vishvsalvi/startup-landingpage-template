@@ -3,6 +3,9 @@ import Terminal from "../components/Terminal"
 import DashboardPreview from "@/components/dashboardpreview";
 import ScrollCardRow from "@/components/ScrollCardRow";
 import LlmSelector from "@/components/LlmSelector";
+import GithubConnect from "@/components/GithubConnect";
+import ConfigEditor from "@/components/ConfigEditor";
+import DeployButton from "@/components/DeployButton";
 
 
 interface GridItem {
@@ -92,3 +95,37 @@ export const GRID_ITEMS: GridItem[] = [
     )
   }
 ];
+
+
+export const TUTORIAL_ITEMS = [
+  {
+    id: 1,
+    title: "Connect your Github",
+    description: "Connect your Github account to our platform. We will use your Github account to deploy your app.",
+    background: (
+      <div className="flex items-center justify-center w-full h-full">
+        <GithubConnect />
+      </div>
+    )
+  },
+  {
+    id: 2,
+    title: "Write config file",
+    description: "The config file lets the engine know what to do. It is a YAML file that contains the configuration for your app.",
+    background: (
+      <div className="flex items-center justify-center w-full h-full">
+        <ConfigEditor />
+      </div>
+    )
+  },
+  {
+    id: 3,
+    title: "Hit the deploy button",
+    description: "Make sure to hit the deploy button to deploy your app. We will deploy your app in a flash.",
+    background: (
+      <div className="flex items-center justify-center w-full h-full">
+        <DeployButton />
+      </div>
+    )
+  }
+]

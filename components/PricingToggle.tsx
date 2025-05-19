@@ -15,7 +15,7 @@ export function PricingToggle({ onPlanChange }: PricingToggleProps) {
   };
 
   return (
-    <div className="flex items-center gap-2 bg-neutral-900 p-1 rounded-full max-w-fit">
+    <div className="flex items-center gap-2 bg-background p-1 rounded-full max-w-fit">
       <button
         onClick={() => handlePlanChange('yearly')}
         className={`px-4 py-1.5 rounded-full text-sm transition-all ${
@@ -25,7 +25,7 @@ export function PricingToggle({ onPlanChange }: PricingToggleProps) {
         }`}
       >
         Pay Yearly
-      <span className="px-3 py-1 bg-zinc-600 rounded-full text-xs ml-2 text-white">
+      <span className="hidden md:block px-2 py-1 bg-zinc-600 rounded-full text-xs ml-2 text-white">
         Save 25%
       </span>
       </button>
